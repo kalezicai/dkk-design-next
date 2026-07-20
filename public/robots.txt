@@ -1,0 +1,27 @@
+# robots.txt für DKK design&marketing
+# https://dkk-design.de
+
+User-agent: *
+Allow: /
+
+# AI/LLM crawlers - allow for training and retrieval
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Sitemap
+Sitemap: https://dkk-design.de/sitemap.xml
