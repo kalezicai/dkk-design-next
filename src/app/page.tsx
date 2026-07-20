@@ -83,6 +83,44 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* SERVICES CTA */}
+      <section className="bg-ink text-white py-16 md:py-20 border-t border-white/5" aria-label="Leistungen Übersicht">
+        <div className="max-w-[1200px] w-full mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <span className="text-xs uppercase tracking-widest text-gold font-mono block mb-2">[ LEISTUNGEN & PAKETE ]</span>
+              <h2 className="text-3xl md:text-4xl font-display font-medium text-white tracking-tight leading-tight">
+                Sechs Kategorien. Drei Stufen. Ein Ansprechpartner.
+              </h2>
+              <p className="text-slate-400 text-sm mt-3 max-w-md">
+                Branding, Druckvorstufe, Webentwicklung, Marketing, Printprodukte und Zusatzleistungen &ndash; alle als Starter-, Professional- oder Premium-Paket buchbar. Mit Festpreisen, ohne böse Überraschungen.
+              </p>
+              <Link
+                href="/leistungen"
+                className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-gold text-ink font-bold text-xs uppercase tracking-widest hover:bg-white transition-all duration-200"
+              >
+                <span>ALLE PAKETE ANSEHEN</span>
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {[
+                { label: "Branding", icon: "branding" },
+                { label: "Druckvorstufe", icon: "prepress" },
+                { label: "Webentwicklung", icon: "web" },
+                { label: "Marketing", icon: "marketing" },
+                { label: "Printprodukte", icon: "print" },
+                { label: "Add-Ons", icon: "addons" },
+              ].map((item) => (
+                <div key={item.label} className="border border-white/10 bg-white/5 p-3 text-center hover:border-gold/30 transition-colors">
+                  <span className="text-xs font-mono text-gold font-bold">{item.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* INTERACTIVE TOOL */}
       <section className="bg-ink text-white py-16 md:py-24" aria-label="Druckdaten-Check">
         <div className="max-w-[1200px] w-full mx-auto px-4 md:px-6">
