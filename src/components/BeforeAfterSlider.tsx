@@ -32,7 +32,7 @@ export default function BeforeAfterSlider({ examples }: { examples: SliderExampl
         {examples.map((ex, idx) => (
           <button key={idx} onClick={() => { setActiveIdx(idx); setSliderPos(50); }}
             className={`px-4 py-3 text-xs uppercase tracking-wider font-semibold border transition-all duration-200 cursor-pointer ${
-              activeIdx === idx ? "bg-navy text-white border-navy" : "bg-white text-slate-600 border-slate-200 hover:bg-slate-100"
+              activeIdx === idx ? "bg-navy text-white border-navy" : "bg-surface text-muted border-line hover:bg-surface-2"
             }`}>
             {ex.title}
           </button>
@@ -45,7 +45,7 @@ export default function BeforeAfterSlider({ examples }: { examples: SliderExampl
             onMouseDown={(e) => { isDragging.current = true; handleMove(e.clientX); }}
             onTouchStart={(e) => { isDragging.current = true; if (e.touches[0]) handleMove(e.touches[0].clientX); }}
             onTouchMove={(e) => { if (isDragging.current && e.touches[0]) handleMove(e.touches[0].clientX); }}
-            className="relative h-[340px] md:h-[420px] bg-ink rounded-none border border-slate-300 select-none overflow-hidden cursor-ew-resize no-select"
+            className="relative h-[340px] md:h-[420px] bg-surface-2 rounded-none border border-line select-none overflow-hidden cursor-ew-resize no-select"
           >
             <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
             <div className="absolute inset-4 border border-dashed border-white/10 pointer-events-none flex items-start justify-between p-2">
@@ -84,28 +84,28 @@ export default function BeforeAfterSlider({ examples }: { examples: SliderExampl
               </div>
             </div>
             <div className="absolute inset-y-0 w-[3px] bg-gold z-30 cursor-ew-resize flex items-center justify-center" style={{ left: `${sliderPos}%` }}>
-              <div className="h-10 w-6 bg-gold text-ink border border-white flex flex-col items-center justify-center space-y-0.5 shadow-md">
-                <span className="w-1 h-3 bg-ink/50" /><span className="w-1 h-3 bg-ink/50" />
+              <div className="h-10 w-6 bg-gold text-on-gold border border-white flex flex-col items-center justify-center space-y-0.5 shadow-md">
+                <span className="w-1 h-3 bg-[#0B0E14]/50" /><span className="w-1 h-3 bg-[#0B0E14]/50" />
               </div>
             </div>
             <div className="absolute left-6 bottom-6 pointer-events-none bg-red-900/80 text-white px-2.5 py-1 text-[10px] uppercase font-mono tracking-widest border border-red-500">Vorher: Roh / Problematisch</div>
             <div className="absolute right-6 bottom-6 pointer-events-none bg-sky/80 text-ink px-2.5 py-1 text-[10px] uppercase font-mono tracking-widest border border-white">Ergebnis: DKK Output</div>
           </div>
-          <div className="mt-2 text-xs text-slate-500 text-center flex items-center justify-center space-x-2">
+          <div className="mt-2 text-xs text-muted text-center flex items-center justify-center space-x-2">
             <Sliders size={12} className="text-gold-dim" /><span>Ziehen Sie den Griff nach links oder rechts, um die technischen Assets zu vergleichen.</span>
           </div>
         </div>
 
         <div className="lg:col-span-4 flex flex-col justify-between">
           <div className="space-y-6">
-            <div className="border-b border-slate-200 pb-4">
+            <div className="border-b border-line pb-4">
               <h3 className="text-xs font-mono uppercase text-gold-dim tracking-wider font-bold">DETAILS FÜR DEN KRITISCHEN BLICK</h3>
-              <p className="text-lg font-display font-bold text-navy mt-1">{current.title}</p>
-              <p className="text-xs text-slate-600 mt-2">{current.description}</p>
+              <p className="text-lg font-display font-bold text-heading mt-1">{current.title}</p>
+              <p className="text-xs text-muted mt-2">{current.description}</p>
             </div>
             <div>
               <h4 className="text-[11px] font-mono text-red-500 font-bold uppercase tracking-wider mb-2 flex items-center space-x-1"><span>&times;</span><span>Typische Fehler</span></h4>
-              <ul className="space-y-1.5 text-xs text-slate-600">
+              <ul className="space-y-1.5 text-xs text-muted">
                 {current.beforeDetails.map((det, i) => (
                   <li key={i} className="flex items-start space-x-2"><span className="text-red-500 font-bold">&bull;</span><span>{det}</span></li>
                 ))}
@@ -113,16 +113,16 @@ export default function BeforeAfterSlider({ examples }: { examples: SliderExampl
             </div>
             <div>
               <h4 className="text-[11px] font-mono text-emerald-600 font-bold uppercase tracking-wider mb-2 flex items-center space-x-1"><Check size={12} className="text-emerald-500" /><span>Meine Lieferung</span></h4>
-              <ul className="space-y-1.5 text-xs text-slate-800 font-medium">
+              <ul className="space-y-1.5 text-xs text-ink/80 font-medium">
                 {current.afterDetails.map((det, i) => (
                   <li key={i} className="flex items-start space-x-2"><span className="text-gold font-bold">&bull;</span><span>{det}</span></li>
                 ))}
               </ul>
             </div>
           </div>
-          <div className="pt-6 border-t border-slate-200 mt-6 lg:mt-0">
-            <p className="text-xs text-slate-500 leading-normal">Benötigen Sie eine Layout-Prüfung? Senden Sie mir Ihre Dateien.</p>
-            <a href="/kontakt" className="inline-flex items-center space-x-1 text-xs font-bold text-navy hover:text-gold-dim uppercase tracking-wider mt-2 group">
+          <div className="pt-6 border-t border-line mt-6 lg:mt-0">
+            <p className="text-xs text-muted leading-normal">Benötigen Sie eine Layout-Prüfung? Senden Sie mir Ihre Dateien.</p>
+            <a href="/kontakt" className="inline-flex items-center space-x-1 text-xs font-bold text-heading hover:text-gold-dim uppercase tracking-wider mt-2 group">
               <span>Rohdateien einreichen</span><ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

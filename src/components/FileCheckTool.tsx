@@ -82,14 +82,14 @@ export default function FileCheckTool() {
   };
 
   return (
-    <div className="border border-white/10 bg-white/5 p-6 md:p-8">
+    <div className="border border-line bg-surface p-6 md:p-8">
       <div className="flex items-center space-x-3 mb-6">
         <div className="w-10 h-10 bg-gold/20 border border-gold flex items-center justify-center">
           <FileWarning size={20} className="text-gold" />
         </div>
         <div>
-          <h3 className="text-lg font-display font-bold text-white">Druckdaten-Check</h3>
-          <p className="text-[10px] font-mono text-slate-400">Kostenloser Preflight-Check – 30 Sekunden</p>
+          <h3 className="text-lg font-display font-bold text-ink">Druckdaten-Check</h3>
+          <p className="text-[10px] font-mono text-muted">Kostenloser Preflight-Check – 30 Sekunden</p>
         </div>
       </div>
 
@@ -97,7 +97,7 @@ export default function FileCheckTool() {
         <div className="space-y-1">
           <label className="text-[10px] font-mono text-gold uppercase tracking-widest font-bold block">Dateiformat</label>
           <select value={fileType} onChange={e => setFileType(e.target.value)}
-            className="w-full bg-ink/80 border border-white/10 px-3 py-2.5 text-xs text-white focus:border-gold transition-colors">
+            className="w-full bg-surface-2 border border-line px-3 py-2.5 text-xs text-ink focus:border-gold transition-colors">
             <option value="">Bitte wählen</option>
             <option value="pdf">PDF/X-4</option>
             <option value="pdf">PDF (Standard)</option>
@@ -111,7 +111,7 @@ export default function FileCheckTool() {
         <div className="space-y-1">
           <label className="text-[10px] font-mono text-gold uppercase tracking-widest font-bold block">Farbmodus</label>
           <select value={colorMode} onChange={e => setColorMode(e.target.value)}
-            className="w-full bg-ink/80 border border-white/10 px-3 py-2.5 text-xs text-white focus:border-gold transition-colors">
+            className="w-full bg-surface-2 border border-line px-3 py-2.5 text-xs text-ink focus:border-gold transition-colors">
             <option value="">Bitte wählen</option>
             <option value="cmyk">CMYK</option>
             <option value="rgb">RGB</option>
@@ -121,7 +121,7 @@ export default function FileCheckTool() {
         <div className="space-y-1">
           <label className="text-[10px] font-mono text-gold uppercase tracking-widest font-bold block">Beschnittzugabe (3 mm?)</label>
           <select value={hasBleed === null ? "" : hasBleed ? "yes" : "no"} onChange={e => setHasBleed(e.target.value === "yes" ? true : e.target.value === "no" ? false : null)}
-            className="w-full bg-ink/80 border border-white/10 px-3 py-2.5 text-xs text-white focus:border-gold transition-colors">
+            className="w-full bg-surface-2 border border-line px-3 py-2.5 text-xs text-ink focus:border-gold transition-colors">
             <option value="">Bitte wählen</option>
             <option value="yes">Ja, 3 mm oder mehr</option>
             <option value="no">Nein, keine Beschnittzugabe</option>
@@ -130,7 +130,7 @@ export default function FileCheckTool() {
         <div className="space-y-1">
           <label className="text-[10px] font-mono text-gold uppercase tracking-widest font-bold block">Auflösung</label>
           <select value={resolution} onChange={e => setResolution(e.target.value)}
-            className="w-full bg-ink/80 border border-white/10 px-3 py-2.5 text-xs text-white focus:border-gold transition-colors">
+            className="w-full bg-surface-2 border border-line px-3 py-2.5 text-xs text-ink focus:border-gold transition-colors">
             <option value="">Bitte wählen</option>
             <option value="300">300 DPI (Druckqualität)</option>
             <option value="150">150 DPI (Großformat)</option>
@@ -140,7 +140,7 @@ export default function FileCheckTool() {
         <div className="space-y-1">
           <label className="text-[10px] font-mono text-gold uppercase tracking-widest font-bold block">Schriften in Pfade?</label>
           <select value={fontsOutlined === null ? "" : fontsOutlined ? "yes" : "no"} onChange={e => setFontsOutlined(e.target.value === "yes" ? true : e.target.value === "no" ? false : null)}
-            className="w-full bg-ink/80 border border-white/10 px-3 py-2.5 text-xs text-white focus:border-gold transition-colors">
+            className="w-full bg-surface-2 border border-line px-3 py-2.5 text-xs text-ink focus:border-gold transition-colors">
             <option value="">Bitte wählen</option>
             <option value="yes">Ja, alle Schriften umgewandelt</option>
             <option value="no">Nein, Texte noch bearbeitbar</option>
@@ -151,7 +151,7 @@ export default function FileCheckTool() {
             className={cn(
               "w-full py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-200 flex items-center justify-center space-x-2",
               fileType && colorMode && hasBleed !== null && resolution && fontsOutlined !== null
-                ? "bg-gold text-ink hover:bg-white cursor-pointer" : "bg-white/10 text-slate-500 cursor-not-allowed"
+                ? "bg-gold text-on-gold hover:bg-white cursor-pointer" : "bg-surface-2 text-muted cursor-not-allowed"
             )}>
             <Upload size={14} /><span>Prüfung starten</span>
           </button>
@@ -159,21 +159,21 @@ export default function FileCheckTool() {
       </div>
 
       {results && (
-        <div className="space-y-3 border-t border-white/10 pt-6">
+        <div className="space-y-3 border-t border-line pt-6">
           {results.map((r, i) => (
             <div key={i} className={cn(
               "flex items-start space-x-3 p-3 text-xs",
-              r.status === "pass" ? "bg-emerald-900/20 border border-emerald-800/30" :
-              r.status === "warn" ? "bg-amber-900/20 border border-amber-800/30" :
-              "bg-red-900/20 border border-red-800/30"
+              r.status === "pass" ? "bg-emerald-100 border border-emerald-300 dark:bg-emerald-900/20 dark:border-emerald-800/30" :
+              r.status === "warn" ? "bg-amber-100 border border-amber-300 dark:bg-amber-900/20 dark:border-amber-800/30" :
+              "bg-red-100 border border-red-300 dark:bg-red-900/20 dark:border-red-800/30"
             )}>
-              {r.status === "pass" ? <CheckCircle size={16} className="text-emerald-400 mt-0.5 shrink-0" /> :
-               r.status === "warn" ? <AlertTriangle size={16} className="text-amber-400 mt-0.5 shrink-0" /> :
-               <XCircle size={16} className="text-red-400 mt-0.5 shrink-0" />}
+              {r.status === "pass" ? <CheckCircle size={16} className="text-emerald-700 dark:text-emerald-400 mt-0.5 shrink-0" /> :
+               r.status === "warn" ? <AlertTriangle size={16} className="text-amber-700 dark:text-amber-400 mt-0.5 shrink-0" /> :
+               <XCircle size={16} className="text-red-700 dark:text-red-400 mt-0.5 shrink-0" />}
               <div>
-                <span className="font-bold text-white block mb-0.5">{r.field}</span>
+                <span className="font-bold text-ink block mb-0.5">{r.field}</span>
                 <span className={cn(
-                  r.status === "pass" ? "text-emerald-200" : r.status === "warn" ? "text-amber-200" : "text-red-200"
+                  r.status === "pass" ? "text-emerald-800 dark:text-emerald-200" : r.status === "warn" ? "text-amber-800 dark:text-amber-200" : "text-red-800 dark:text-red-200"
                 )}>{r.message}</span>
               </div>
             </div>

@@ -21,23 +21,23 @@ const NAV_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-white pt-16 pb-12 border-t border-white/10 mt-auto">
+    <footer className="bg-[#0B0E14] text-white pt-16 pb-12 border-t border-white/10 mt-auto">
       <div className="max-w-[1200px] w-full mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
           <div className="md:col-span-4 space-y-4">
             <span className="block">
               <img
-                src="/logo-main.png"
+                src="/logo-v3.png"
                 alt="DKK design&marketing"
                 className="h-8 w-auto object-contain"
-                width={1596}
+                width={2048}
                 height={512}
               />
             </span>
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed">Print-shop-gerechte Markenidentität, Webentwicklung und Druckvorstufe aus einer Hand. 12 Jahre Druckvorstufe &ndash; 0 Druckerei-Rückweisungen.</p>
           </div>
           <div className="md:col-span-3 space-y-3">
-            <h4 className="text-[11px] font-mono text-gold-dim uppercase tracking-wider font-bold">Navigation</h4>
+            <h4 className="text-[11px] font-mono text-[#C9B27A] uppercase tracking-wider font-bold">Navigation</h4>
             <ul className="space-y-2 text-xs">
               {NAV_LINKS.map((link) => (
                 <li key={link.path}>
@@ -47,11 +47,11 @@ export default function Footer() {
             </ul>
           </div>
           <div className="md:col-span-3 space-y-3">
-            <h4 className="text-[11px] font-mono text-gold-dim uppercase tracking-wider font-bold">Handwerk & Werte</h4>
+            <h4 className="text-[11px] font-mono text-[#C9B27A] uppercase tracking-wider font-bold">Handwerk & Werte</h4>
             <p className="text-xs text-slate-300 leading-relaxed">Präzision aus der Druckvorstufe – verwurzelt in der Balkan-Print-Shop-Tradition Ulcinjs.</p>
           </div>
           <div className="md:col-span-2 space-y-3">
-            <h4 className="text-[11px] font-mono text-gold-dim uppercase tracking-wider font-bold">Schnelle Kanäle</h4>
+            <h4 className="text-[11px] font-mono text-[#C9B27A] uppercase tracking-wider font-bold">Schnelle Kanäle</h4>
             <div className="space-y-2">
               <a href="mailto:info.dkk@gmail.com" className="flex items-center space-x-1.5 text-xs font-mono font-bold text-sky hover:text-white transition-colors">
                 <Mail size={14} /><span>info.dkk@gmail.com</span>

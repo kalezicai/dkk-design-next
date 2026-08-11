@@ -50,44 +50,44 @@ export default async function BlogPostPage({ params }: Props) {
           ],
         })}} />
 
-        <Link href="/blog" className="inline-flex items-center space-x-2 text-xs font-bold text-navy hover:text-gold-dim uppercase tracking-wider mb-8 group">
+        <Link href="/blog" className="inline-flex items-center space-x-2 text-xs font-bold text-heading hover:text-gold-dim uppercase tracking-wider mb-8 group">
           <span className="group-hover:-translate-x-1 transition-transform">&larr;</span><span>Alle Artikel</span>
         </Link>
 
-        <div className="flex flex-wrap items-center gap-3 text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-4">
-          <span className="bg-slate-100 px-2 py-0.5">{post.category}</span>
+        <div className="flex flex-wrap items-center gap-3 text-[10px] font-mono text-muted uppercase tracking-wider mb-4">
+          <span className="bg-surface-2 px-2 py-0.5">{post.category}</span>
           <span>{post.readingTime}</span>
           <span>{post.author}</span>
           <span>{post.date} {post.modifiedDate && `(aktualisiert: ${post.modifiedDate})`}</span>
         </div>
 
-        <h1 className="text-3xl md:text-4xl font-display font-bold text-navy tracking-tight leading-tight mb-4">{post.title}</h1>
-        <p className="text-sm md:text-base text-slate-600 leading-relaxed mb-8 border-l-2 border-gold pl-4 italic">{post.excerpt}</p>
+        <h1 className="text-3xl md:text-4xl font-display font-bold text-heading tracking-tight leading-tight mb-4">{post.title}</h1>
+        <p className="text-sm md:text-base text-muted leading-relaxed mb-8 border-l-2 border-gold pl-4 italic">{post.excerpt}</p>
 
-        <div className="prose prose-sm md:prose-base max-w-none text-slate-700 leading-relaxed space-y-4">
+        <div className="prose prose-sm md:prose-base max-w-none text-ink/80 leading-relaxed space-y-4">
           {paragraphs.map((paragraph, idx) => {
             if (paragraph.startsWith("## ")) {
-              return <h2 key={idx} className="text-xl font-display font-bold text-navy mt-8 mb-3">{paragraph.replace("## ", "")}</h2>;
+              return <h2 key={idx} className="text-xl font-display font-bold text-heading mt-8 mb-3">{paragraph.replace("## ", "")}</h2>;
             }
             return <p key={idx} className="text-sm md:text-base">{paragraph}</p>;
           })}
         </div>
 
-        <div className="mt-10 pt-6 border-t border-slate-200 flex flex-wrap gap-2">
-          {post.tags.map((tag) => <span key={tag} className="text-[10px] font-mono text-slate-500 bg-white border border-slate-200 px-2 py-1">#{tag}</span>)}
+        <div className="mt-10 pt-6 border-t border-line flex flex-wrap gap-2">
+          {post.tags.map((tag) => <span key={tag} className="text-[10px] font-mono text-muted bg-surface border border-line px-2 py-1">#{tag}</span>)}
         </div>
 
-        <div className="mt-10 pt-6 border-t border-slate-200">
-          <Link href="/blog" className="inline-flex items-center space-x-2 text-xs font-bold text-navy hover:text-gold-dim uppercase tracking-wider group">
+        <div className="mt-10 pt-6 border-t border-line">
+          <Link href="/blog" className="inline-flex items-center space-x-2 text-xs font-bold text-heading hover:text-gold-dim uppercase tracking-wider group">
             <span className="group-hover:-translate-x-1 transition-transform">&larr;</span><span>Zurück zur Übersicht</span>
           </Link>
         </div>
 
-        <div className="mt-10 bg-ink text-white p-6 md:p-8">
+        <div className="mt-10 bg-[#0B0E14] text-white p-6 md:p-8">
           <p className="text-xs font-mono text-gold uppercase tracking-widest mb-2">[ HILFE AUS DER WERKSTATT ]</p>
           <h2 className="text-xl md:text-2xl font-display font-bold mb-2">Ihre Datei soll nicht abgelehnt werden?</h2>
           <p className="text-sm text-slate-300 mb-5">Kostenloser Preflight-Check: Ich prüfe Ihre Druckdaten in 30 Sekunden &ndash; kostenlos, unverbindlich, ohne Registrierung. Antwort innerhalb von 12 Stunden.</p>
-          <Link href="/kontakt" className="inline-flex items-center gap-2 px-5 py-3 bg-gold text-ink font-bold text-xs uppercase tracking-widest hover:bg-white transition-all duration-200 group">
+          <Link href="/kontakt" className="inline-flex items-center gap-2 px-5 py-3 bg-gold text-on-gold font-bold text-xs uppercase tracking-widest hover:bg-white transition-all duration-200 group">
             <span>Kostenlose Prüfung anfordern</span><span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
           </Link>
         </div>

@@ -42,21 +42,21 @@ export default function AboutPage() {
 
         <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" staggerMs={100}>
           <StaggerItem>
-            <div className="bg-ink text-white p-6 border border-ink">
+            <div className="bg-[#0B0E14] text-white p-6 border border-[#0B0E14]">
               <span className="text-4xl font-display font-bold text-gold block"><CountUp value={12} suffix=" Jahre" /></span>
               <span className="text-xs uppercase tracking-widest text-slate-400 font-mono mt-1 block">Druckvorstufe & Medienproduktion</span>
             </div>
           </StaggerItem>
           <StaggerItem>
-            <div className="bg-white border border-slate-200 p-6 hover:border-gold transition-colors">
+            <div className="bg-surface border border-line p-6 hover:border-gold transition-colors">
               <span className="text-4xl font-display font-bold text-gold block"><CountUp value={1500} suffix="+" /></span>
-              <span className="text-xs uppercase tracking-widest text-slate-400 font-mono mt-1 block">Druckfertige Dateien geliefert</span>
+              <span className="text-xs uppercase tracking-widest text-muted font-mono mt-1 block">Druckfertige Dateien geliefert</span>
             </div>
           </StaggerItem>
           <StaggerItem>
-            <div className="bg-white border border-slate-200 p-6 hover:border-gold transition-colors">
+            <div className="bg-surface border border-line p-6 hover:border-gold transition-colors">
               <span className="text-4xl font-display font-bold text-gold block">0</span>
-              <span className="text-xs uppercase tracking-widest text-slate-400 font-mono mt-1 block">Druckerei-Rückweisungen in 12 Jahren</span>
+              <span className="text-xs uppercase tracking-widest text-muted font-mono mt-1 block">Druckerei-Rückweisungen in 12 Jahren</span>
             </div>
           </StaggerItem>
         </Stagger>
@@ -64,26 +64,26 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <Reveal className="lg:col-span-5">
             <span className="text-xs uppercase tracking-widest text-gold-dim font-bold block mb-2 font-mono">[ ÜBER MICH ]</span>
-            <h1 className="text-3xl md:text-4xl font-display font-medium text-navy tracking-tight leading-tight mb-6">Solo-Designer mit Druckereiwurzeln.</h1>
-            <div className="space-y-4 text-sm text-slate-700 leading-relaxed">
+            <h1 className="text-3xl md:text-4xl font-display font-medium text-heading tracking-tight leading-tight mb-6">Solo-Designer mit Druckereiwurzeln.</h1>
+            <div className="space-y-4 text-sm text-ink/80 leading-relaxed">
               <p>Ich bin ein unabhängiger Grafikdesigner und Druckvorstufen-Techniker mit über 12 Jahren Erfahrung. Meine Wurzeln liegen in Ulcinj (Montenegro), meine Basis in Deutschland.</p>
               <p>Anders als eine Agentur arbeite ich direkt – von der ersten Skizze bis zur produktionsreifen Datei. Jedes Projekt durchläuft meine persönliche Qualitätskontrolle.</p>
               <p>Mein Fokus liegt auf druck- und produktionsgerechtem Design. Ob Offsetdruck, Fahrzeugfolierung oder Webentwicklung – ich liefere Dateien, die in der realen Produktion bestehen.</p>
             </div>
           </Reveal>
           <Reveal delay={1} className="lg:col-span-7">
-            <div className="bg-white border border-slate-200 p-6 md:p-8 space-y-6">
-              <h2 className="text-lg font-display font-bold text-navy border-b border-slate-100 pb-3">Meine Arbeitsweise</h2>
-              <div className="space-y-4 text-sm text-slate-700 leading-relaxed">
+            <div className="bg-surface border border-line p-6 md:p-8 space-y-6">
+              <h2 className="text-lg font-display font-bold text-heading border-b border-line pb-3">Meine Arbeitsweise</h2>
+              <div className="space-y-4 text-sm text-ink/80 leading-relaxed">
                 <p>Jedes Projekt beginnt mit einer gründlichen Analyse Ihrer Anforderungen. Ich prüfe Ihre Dateien auf Drucktauglichkeit, Farbraum, Auflösung und Beschnitt.</p>
                 <p>Nach der Analyse folgt die Gestaltung. Jede Datei wird in der produktionsgerechten Version ausgeliefert – ob für den Offsetdruck, die Folienplotteranlage oder das Web.</p>
                 <p>Mein Versprechen: Sie erhalten keine &bdquo;Entwürfe&ldquo;, sondern druckfertige, produktionssichere Ergebnisse.</p>
               </div>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-slate-100 pt-5">
-                <p className="flex items-center gap-2 text-xs text-slate-600 font-mono">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-line pt-5">
+                <p className="flex items-center gap-2 text-xs text-muted font-mono">
                   <Clock size={14} className="text-gold" /> Antwortzeit: innerhalb von 12 Stunden an Werktagen
                 </p>
-                <Link href="/kontakt" className="inline-flex items-center gap-2 px-4 py-2 bg-ink text-white text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-ink transition-all duration-200 group">
+                <Link href="/kontakt" className="inline-flex items-center gap-2 px-4 py-2 bg-navy text-white text-xs font-bold uppercase tracking-widest hover:bg-gold hover:text-on-gold transition-all duration-200 group">
                   <span>Projekt anfragen</span><ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </div>
@@ -94,9 +94,9 @@ export default function AboutPage() {
         <Stagger className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6" staggerMs={110}>
           {VALUES.map((v) => (
             <StaggerItem key={v.title}>
-              <div className="bg-white border border-slate-200 p-6 hover:border-gold hover:-translate-y-1 transition-all duration-300 h-full">
-                <h3 className="font-display font-bold text-navy text-sm mb-2">{v.title}</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">{v.desc}</p>
+              <div className="bg-surface border border-line p-6 hover:border-gold hover:-translate-y-1 transition-all duration-300 h-full">
+                <h3 className="font-display font-bold text-heading text-sm mb-2">{v.title}</h3>
+                <p className="text-xs text-muted leading-relaxed">{v.desc}</p>
               </div>
             </StaggerItem>
           ))}

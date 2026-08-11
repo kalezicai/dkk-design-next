@@ -21,28 +21,28 @@ function ProjectCard({ project }: { project: Project }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -12 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className="group bg-white border border-slate-200 overflow-hidden hover:border-gold hover:-translate-y-1 transition-all duration-300 flex flex-col"
+      className="group bg-surface border border-line overflow-hidden hover:border-gold hover:-translate-y-1 transition-all duration-300 flex flex-col"
     >
       <div className="p-5 pb-3">
         <p className="text-2xl font-display font-bold text-gold leading-tight">{project.result}</p>
       </div>
-      <div className="relative aspect-4/3 bg-slate-100 overflow-hidden">
+      <div className="relative aspect-4/3 bg-surface-2 overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
           className="w-full h-full object-cover grayscale brightness-95 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
           loading="lazy"
         />
-        <div className="absolute top-2 left-2 bg-ink/90 text-white font-mono text-[9px] px-2 py-0.5 tracking-wider uppercase border border-white/10">{project.categoryLabel}</div>
-        <div className="absolute bottom-2 right-2 bg-ink/90 text-gold font-mono text-[9px] px-2 py-0.5 border border-gold-dim">DRUCKFERTIG KONFIGURIERT</div>
+        <div className="absolute top-2 left-2 bg-[#0B0E14]/90 text-white font-mono text-[9px] px-2 py-0.5 tracking-wider uppercase border border-white/10">{project.categoryLabel}</div>
+        <div className="absolute bottom-2 right-2 bg-[#0B0E14]/90 text-gold font-mono text-[9px] px-2 py-0.5 border border-gold-dim">DRUCKFERTIG KONFIGURIERT</div>
       </div>
       <div className="p-5 flex flex-col flex-1">
-        <h3 className="text-lg font-display font-bold text-navy group-hover:text-gold-dim transition-colors">{project.title}</h3>
-        <p className="text-xs text-slate-600 mt-2 leading-relaxed">{project.tagline}</p>
+        <h3 className="text-lg font-display font-bold text-heading group-hover:text-gold-dim transition-colors">{project.title}</h3>
+        <p className="text-xs text-muted mt-2 leading-relaxed">{project.tagline}</p>
         <div className="mt-auto pt-4">
-          <div className="bg-slate-50 border border-slate-200 p-3">
-            <span className="text-[10px] font-mono text-slate-400 uppercase font-bold tracking-wider">SPECS: </span>
-            <span className="text-[10px] font-mono text-slate-700 leading-tight">{project.technicalDetails}</span>
+          <div className="bg-surface-2 border border-line p-3">
+            <span className="text-[10px] font-mono text-muted uppercase font-bold tracking-wider">SPECS: </span>
+            <span className="text-[10px] font-mono text-ink/80 leading-tight">{project.technicalDetails}</span>
           </div>
         </div>
       </div>
@@ -65,8 +65,8 @@ export default function PortfolioGrid() {
             onClick={() => setActive(f.id)}
             className={`px-4 py-2 text-xs font-mono uppercase tracking-widest border transition-all duration-200 ${
               active === f.id
-                ? "bg-ink text-gold border-ink"
-                : "bg-white text-slate-600 border-slate-200 hover:border-gold hover:text-navy"
+                ? "bg-navy text-gold border-navy"
+                : "bg-surface text-muted border-line hover:border-gold hover:text-heading"
             }`}
           >
             {f.label}

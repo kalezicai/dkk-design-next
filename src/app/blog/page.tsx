@@ -29,24 +29,24 @@ export default function BlogPage() {
         <Reveal>
           <div className="mb-12">
             <span className="text-xs uppercase tracking-widest text-gold-dim font-bold block mb-2 font-mono">[ FACHWISSEN AUS DER WERKSTATT ]</span>
-            <h1 className="text-3xl md:text-4xl font-display font-medium text-navy tracking-tight leading-tight">Blog & Fachartikel</h1>
+            <h1 className="text-3xl md:text-4xl font-display font-medium text-heading tracking-tight leading-tight">Blog & Fachartikel</h1>
           </div>
         </Reveal>
 
         <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerMs={100}>
           {BLOG_POSTS.map((post) => (
             <StaggerItem key={post.slug}>
-              <Link href={`/blog/${post.slug}`} className="group bg-white border border-slate-200 overflow-hidden hover:border-gold hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+              <Link href={`/blog/${post.slug}`} className="group bg-surface border border-line overflow-hidden hover:border-gold hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
                 <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center space-x-2 text-[10px] font-mono text-slate-500 uppercase tracking-wider mb-3">
-                    <span className="bg-slate-100 px-2 py-0.5">{post.category}</span>
+                  <div className="flex items-center space-x-2 text-[10px] font-mono text-muted uppercase tracking-wider mb-3">
+                    <span className="bg-surface-2 px-2 py-0.5">{post.category}</span>
                     <span>{post.readingTime}</span>
                   </div>
-                  <h2 className="text-lg font-display font-bold text-navy group-hover:text-gold-dim transition-colors leading-tight mb-3">{post.title}</h2>
-                  <p className="text-xs text-slate-600 leading-relaxed flex-1">{post.excerpt}</p>
-                  <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-[10px] font-mono text-slate-400">{post.date}</span>
-                    <span className="text-[10px] font-bold text-navy group-hover:text-gold-dim uppercase tracking-wider">Weiterlesen &rarr;</span>
+                  <h2 className="text-lg font-display font-bold text-heading group-hover:text-gold-dim transition-colors leading-tight mb-3">{post.title}</h2>
+                  <p className="text-xs text-muted leading-relaxed flex-1">{post.excerpt}</p>
+                  <div className="mt-4 pt-4 border-t border-line flex items-center justify-between">
+                    <span className="text-[10px] font-mono text-muted">{post.date}</span>
+                    <span className="text-[10px] font-bold text-heading group-hover:text-gold-dim uppercase tracking-wider">Weiterlesen &rarr;</span>
                   </div>
                 </div>
               </Link>

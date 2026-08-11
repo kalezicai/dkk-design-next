@@ -31,19 +31,19 @@ export default function FAQPage() {
         <Reveal>
           <div className="text-center mb-12">
             <span className="text-xs uppercase tracking-widest text-gold-dim font-bold block mb-2 font-mono">[ ECHTE ANTWORTEN ]</span>
-            <h1 className="text-3xl md:text-4xl font-display font-medium text-navy tracking-tight leading-tight">Häufig gestellte Fragen</h1>
+            <h1 className="text-3xl md:text-4xl font-display font-medium text-heading tracking-tight leading-tight">Häufig gestellte Fragen</h1>
           </div>
         </Reveal>
 
         <Stagger className="space-y-3" staggerMs={60}>
           {FAQ_DATA.map((faq, index) => (
             <StaggerItem key={index}>
-              <details className="bg-white border border-slate-200 transition-all duration-200 hover:border-gold/40 group open:border-gold/40">
-                <summary className="w-full text-left p-5 flex items-center justify-between font-display font-bold text-navy text-sm md:text-base cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+              <details className="bg-surface border border-line transition-all duration-200 hover:border-gold/40 group open:border-gold/40">
+                <summary className="w-full text-left p-5 flex items-center justify-between font-display font-bold text-heading text-sm md:text-base cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                   <span className="pr-4">{faq.question}</span>
                   <Plus size={16} className="text-gold shrink-0 transition-transform duration-300 group-open:rotate-45" />
                 </summary>
-                <div className="px-5 pb-5 pt-1 text-xs md:text-sm text-slate-600 border-t border-slate-100 leading-relaxed bg-slate-50">
+                <div className="px-5 pb-5 pt-1 text-xs md:text-sm text-muted border-t border-line leading-relaxed bg-surface-2">
                   <p>{faq.answer}</p>
                 </div>
               </details>

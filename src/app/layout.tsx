@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     url: "https://dkk-design.de",
     title: "DKK design&marketing | Print-Shop-Level Designstudio aus Deutschland",
     description: "Solo-Designstudio für Druckvorstufe, Branding, Fahrzeugfolierung und Webentwicklung. 1.500+ druckfertige Projekte.",
-    images: [{ url: "/logo-main.png", width: 1536, height: 512, alt: "DKK design&marketing" }],
+    images: [{ url: "/logo.png", width: 2048, height: 512, alt: "DKK design&marketing" }],
   },
-  twitter: { card: "summary_large_image", title: "DKK design&marketing | Print-Shop-Level Designstudio", description: "Druckvorstufe, Branding, Fahrzeugfolierung, Webentwicklung – aus Deutschland.", images: ["/logo-main.png"] },
+  twitter: { card: "summary_large_image", title: "DKK design&marketing | Print-Shop-Level Designstudio", description: "Druckvorstufe, Branding, Fahrzeugfolierung, Webentwicklung – aus Deutschland.", images: ["/logo.png"] },
   icons: { icon: "/icon.png", apple: "/icon.png" },
   alternates: {
     canonical: "https://dkk-design.de",
@@ -58,8 +58,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="de" className={`${dmSans.variable} ${playfair.variable} scroll-smooth`}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSON_LD) }} />
+        <script
+          dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('dkk-theme');if(t!=='light'){document.documentElement.classList.add('dark');}}catch(e){document.documentElement.classList.add('dark');}})();` }}
+        />
       </head>
-      <body className="bg-[#F7F8FA] text-[#0B0E14] antialiased selection:bg-[#C9A24C] selection:text-[#0B0E14] font-sans flex flex-col min-h-screen">
+      <body className="bg-paper text-ink antialiased selection:bg-[#C9A24C] selection:text-[#0B0E14] font-sans flex flex-col min-h-screen">
         <MotionConfig reducedMotion="user">
           <Header />
           <main className="flex-1">{children}</main>

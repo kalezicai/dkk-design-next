@@ -1,16 +1,42 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-display: "Playfair Display", serif;
   --font-sans: "DM Sans", sans-serif;
 
+  /* LIGHT MODE (default) */
   --color-ink: #0B0E14;
   --color-paper: #F7F8FA;
-  --color-white: #FFFFFF;
-  --color-navy: #0E2A47;
-  --color-sky: #5BB8E0;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #EEF1F5;
+  --color-line: #E3E6EB;
+  --color-line-strong: #C8CFD9;
+  --color-muted: #5A6372;
+  --color-faint: #8A93A0;
+  --color-heading: #0E2A47;
   --color-gold: #C9A24C;
   --color-gold-dim: #8A7538;
+  --color-on-gold: #0B0E14;
+  --color-navy: #0E2A47;
+  --color-sky: #5BB8E0;
+  --color-white: #FFFFFF;
+}
+
+/* DARK MODE (current look, applied via .dark on <html>) */
+.dark {
+  --color-ink: #F2F4F7;
+  --color-paper: #0B0E14;
+  --color-surface: #151A24;
+  --color-surface-2: #1C2230;
+  --color-line: rgba(255, 255, 255, 0.10);
+  --color-line-strong: rgba(255, 255, 255, 0.18);
+  --color-muted: #94A3B8;
+  --color-faint: #64748B;
+  --color-heading: #A9C9E6;
+  --color-gold-dim: #C9B27A;
+  --color-on-gold: #0B0E14;
 }
 
 :root {
@@ -20,6 +46,11 @@
 html {
   font-family: var(--font-sans);
   scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 h1, h2, h3, h4, h5, h6 {
