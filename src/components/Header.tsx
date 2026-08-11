@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -54,7 +55,7 @@ export default function Header() {
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.path;
               return (
-                <li key={link.path}>
+                <li key={link.path} className="group/li">
                   <Link
                     href={link.path}
                     className={cn(
@@ -64,7 +65,12 @@ export default function Header() {
                     aria-current={isActive ? "page" : undefined}
                   >
                     {link.label}
-                    {isActive && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-sky animate-pulse" />}
+                    <span
+                      className={cn(
+                        "absolute bottom-0 left-0 h-0.5 bg-gold transition-all duration-300",
+                        isActive ? "w-full" : "w-0 group-hover/li:w-full"
+                      )}
+                    />
                   </Link>
                 </li>
               );
@@ -81,24 +87,34 @@ export default function Header() {
         </button>
       </div>
 
-      {mobileOpen && (
-        <div className="fixed inset-0 z-40 bg-ink/98 pt-20 px-6 flex flex-col space-y-6 md:hidden transition-all duration-300" role="dialog" aria-modal="true">
-          <ul className="flex flex-col space-y-4">
-            {NAV_LINKS.map((link) => {
-              const isActive = pathname === link.path;
-              return (
-                <li key={link.path} className="border-b border-white/5 pb-2">
-                  <Link href={link.path} className={cn("block py-1 text-sm uppercase tracking-widest", isActive ? "text-gold font-bold" : "text-slate-300")}>{link.label}</Link>
-                </li>
-              );
-            })}
-          </ul>
-          <div className="pt-4 flex flex-col space-y-4">
-            <Link href="/kontakt" className="w-full text-center text-xs uppercase tracking-widest bg-gold text-ink font-bold py-3 hover:bg-gold-dim transition-colors">Kostenlose Prüfung</Link>
-            <div className="text-xs text-slate-400 text-center">Direkter Kontakt: <a href="mailto:info.dkk@gmail.com" className="text-white font-mono underline">info.dkk@gmail.com</a></div>
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-40 bg-ink/98 pt-20 px-6 flex flex-col space-y-6 md:hidden"
+            role="dialog"
+            aria-modal="true"
+          >
+            <ul className="flex flex-col space-y-4">
+              {NAV_LINKS.map((link) => {
+                const isActive = pathname === link.path;
+                return (
+                  <li key={link.path} className="border-b border-white/5 pb-2">
+                    <Link href={link.path} className={cn("block py-1 text-sm uppercase tracking-widest", isActive ? "text-gold font-bold" : "text-slate-300")}>{link.label}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <div className="pt-4 flex flex-col space-y-4">
+              <Link href="/kontakt" className="w-full text-center text-xs uppercase tracking-widest bg-gold text-ink font-bold py-3 hover:bg-gold-dim transition-colors">Kostenlose Prüfung</Link>
+              <div className="text-xs text-slate-400 text-center">Direkter Kontakt: <a href="mailto:info.dkk@gmail.com" className="text-white font-mono underline">info.dkk@gmail.com</a></div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

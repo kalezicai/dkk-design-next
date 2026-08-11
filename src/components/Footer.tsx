@@ -25,10 +25,16 @@ export default function Footer() {
       <div className="max-w-[1200px] w-full mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
           <div className="md:col-span-4 space-y-4">
-            <span className="text-xl font-display font-black text-white block">
-              DKK<span className="text-gold font-sans font-light text-base ml-1">design&marketing</span>
+            <span className="block">
+              <img
+                src="/logo-main.png"
+                alt="DKK design&marketing"
+                className="h-8 w-auto object-contain"
+                width={1536}
+                height={512}
+              />
             </span>
-            <p className="text-xs text-slate-400 max-w-sm leading-relaxed">Print-shop-gerechte Markenidentität, Webentwicklung und Druckvorstufe aus einer Hand.</p>
+            <p className="text-xs text-slate-400 max-w-sm leading-relaxed">Print-shop-gerechte Markenidentität, Webentwicklung und Druckvorstufe aus einer Hand. 12 Jahre Druckvorstufe &ndash; 0 Druckerei-Rückweisungen.</p>
           </div>
           <div className="md:col-span-3 space-y-3">
             <h4 className="text-[11px] font-mono text-gold-dim uppercase tracking-wider font-bold">Navigation</h4>
@@ -51,8 +57,8 @@ export default function Footer() {
                 <Mail size={14} /><span>info.dkk@gmail.com</span>
               </a>
               <div className="flex space-x-3 text-slate-400 pt-1">
-                <a href="https://www.instagram.com" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors" aria-label="Instagram"><InstagramIcon size={18} /></a>
-                <a href="https://www.behance.net" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors font-mono font-bold text-xs flex items-center">Behance</a>
+                <a href="https://www.instagram.com/dkk.design.marketing" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors" aria-label="Instagram"><InstagramIcon size={18} /></a>
+                <a href="https://www.behance.net/dkk-design-marketing" target="_blank" rel="noreferrer" className="hover:text-gold transition-colors font-mono font-bold text-xs flex items-center">Behance</a>
               </div>
             </div>
           </div>

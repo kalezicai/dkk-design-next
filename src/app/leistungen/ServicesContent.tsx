@@ -103,6 +103,24 @@ function CategoryCard({ category }: { category: (typeof SERVICE_CATEGORIES)[numb
 }
 
 export default function ServicesContent() {
+  const offers = SERVICE_CATEGORIES.flatMap((c) =>
+    c.subcategories.flatMap((s) =>
+      s.tiers
+        .map((t) => {
+          const priceMatch = t.price.replace(/\./g, "").match(/(\d+)/);
+          if (!priceMatch) return null;
+          return {
+            "@type": "Offer",
+            name: `${c.title} – ${s.title} (${t.name})`,
+            price: priceMatch[1],
+            priceCurrency: "EUR",
+            availability: "https://schema.org/InStock",
+          };
+        })
+        .filter(Boolean)
+    )
+  );
+
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -119,6 +137,7 @@ export default function ServicesContent() {
         url: "https://dkk-design.de",
       },
     })),
+    ...(offers.length > 0 && { offers: { "@type": "OfferCatalog", name: "DKK Festpreis-Pakete", itemListElement: offers } }),
   };
 
   return (

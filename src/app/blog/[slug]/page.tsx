@@ -82,6 +82,15 @@ export default async function BlogPostPage({ params }: Props) {
             <span className="group-hover:-translate-x-1 transition-transform">&larr;</span><span>Zurück zur Übersicht</span>
           </Link>
         </div>
+
+        <div className="mt-10 bg-ink text-white p-6 md:p-8">
+          <p className="text-xs font-mono text-gold uppercase tracking-widest mb-2">[ HILFE AUS DER WERKSTATT ]</p>
+          <h2 className="text-xl md:text-2xl font-display font-bold mb-2">Ihre Datei soll nicht abgelehnt werden?</h2>
+          <p className="text-sm text-slate-300 mb-5">Kostenloser Preflight-Check: Ich prüfe Ihre Druckdaten in 30 Sekunden &ndash; kostenlos, unverbindlich, ohne Registrierung. Antwort innerhalb von 12 Stunden.</p>
+          <Link href="/kontakt" className="inline-flex items-center gap-2 px-5 py-3 bg-gold text-ink font-bold text-xs uppercase tracking-widest hover:bg-white transition-all duration-200 group">
+            <span>Kostenlose Prüfung anfordern</span><span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+          </Link>
+        </div>
       </article>
     </div>
   );
