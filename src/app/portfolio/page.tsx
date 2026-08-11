@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { PROJECTS } from "@/data/projects";
+import PortfolioGrid from "./PortfolioGrid";
+import { Reveal } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -32,38 +33,17 @@ export default function PortfolioPage() {
           ],
         })}} />
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-          <div>
-            <span className="text-xs uppercase tracking-widest text-gold-dim font-bold block mb-2 font-mono">[ PRODUKTIONSARCHIV ]</span>
-            <h1 className="text-3xl md:text-4xl font-display font-medium text-navy tracking-tight leading-tight">Physische Ergebnisse aus realen Druckvorstufen- und Digitalsetups.</h1>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PROJECTS.map((p) => (
-            <div key={p.id} className="group bg-white border border-slate-200 overflow-hidden hover:border-gold transition-all flex flex-col justify-between">
-              <div>
-                <div className="relative aspect-4/3 bg-slate-100 overflow-hidden">
-                  <img src={p.image} alt={p.title} className="w-full h-full object-cover grayscale brightness-95 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" loading="lazy" />
-                  <div className="absolute top-2 left-2 bg-ink/90 text-white font-mono text-[9px] px-2 py-0.5 tracking-wider uppercase border border-white/10">{p.categoryLabel}</div>
-                  <div className="absolute bottom-2 right-2 bg-ink/90 text-gold font-mono text-[9px] px-2 py-0.5 border border-gold-dim">DRUCKFERTIG KONFIGURIERT</div>
-                </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-display font-bold text-navy group-hover:text-gold-dim transition-colors">{p.title}</h3>
-                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">{p.tagline}</p>
-                </div>
-              </div>
-              <div className="p-5 pt-0 mt-auto">
-                <div className="bg-slate-50 border border-slate-200 p-3">
-                  <div className="flex items-start space-x-1.5">
-                    <span className="text-[10px] font-mono text-slate-400 uppercase font-bold tracking-wider">SPECS: </span>
-                    <span className="text-[10px] font-mono text-slate-700 leading-tight">{p.technicalDetails}</span>
-                  </div>
-                </div>
-              </div>
+        <Reveal>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div>
+              <span className="text-xs uppercase tracking-widest text-gold-dim font-bold block mb-2 font-mono">[ PRODUKTIONSARCHIV ]</span>
+              <h1 className="text-3xl md:text-4xl font-display font-medium text-navy tracking-tight leading-tight">Physische Ergebnisse aus realen Druckvorstufen- und Digitalsetups.</h1>
+              <p className="text-slate-600 text-sm mt-3 max-w-2xl">Jede Referenz zeigt zuerst, was für Sie dabei herauskommt – dann, wie es technisch umgesetzt wurde.</p>
             </div>
-          ))}
-        </div>
+          </div>
+        </Reveal>
+
+        <PortfolioGrid />
 
         <div className="mt-12 bg-white border border-slate-200 p-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div><span className="font-display font-bold text-navy block text-sm">Meine Originaldateien einsehen?</span><span className="text-xs text-slate-600">Ich teile gern direkte Behance-Links.</span></div>

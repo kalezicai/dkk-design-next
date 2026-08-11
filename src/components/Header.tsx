@@ -39,10 +39,14 @@ export default function Header() {
       )}
     >
       <div className="max-w-[1200px] w-full mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2 group focus:outline-none" aria-label="DKK design&marketing — Zur Startseite">
-          <span className="text-xl tracking-tight text-white font-display font-black group-hover:text-gold transition-colors duration-200">
-            DKK<span className="text-gold font-sans font-light text-base ml-1">design&marketing</span>
-          </span>
+        <Link href="/" className="flex items-center group focus:outline-none" aria-label="DKK design&marketing — Zur Startseite">
+          <img
+            src="/logo-main.png"
+            alt="DKK design&marketing"
+            className="h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+            width={1536}
+            height={512}
+          />
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8" aria-label="Hauptnavigation">

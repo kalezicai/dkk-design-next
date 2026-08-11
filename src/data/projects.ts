@@ -7,6 +7,7 @@ export interface Project {
   tagline: string;
   technicalDetails: string;
   clientResult: string;
+  result: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -18,7 +19,8 @@ export const PROJECTS: Project[] = [
     image: "/images/project-branding.jpg",
     tagline: "Logo- und Papeterie-Paket für eine Fischgaststätte.",
     technicalDetails: "Aufbereitet für 350g/qm Karton, CMYK-Farbraum, 3 mm Beschnitt, separierte Goldfolien-Vektorebene.",
-    clientResult: "Keine Rückfragen der Druckerei. Direkt lieferbar für den Offsetdruck."
+    clientResult: "Keine Rückfragen der Druckerei. Direkt lieferbar für den Offsetdruck.",
+    result: "0 Rückfragen der Druckerei."
   },
   {
     id: "proj-2",
@@ -28,7 +30,8 @@ export const PROJECTS: Project[] = [
     image: "/images/project-vehicle.jpg",
     tagline: "Ganzfahrzeug-Layout optimiert für komplexe Panelübergänge.",
     technicalDetails: "1:30-Maßstab Mercedes Sprinter 2024-Vektorblueprint. 150 mm Überlappungszugabe.",
-    clientResult: "Keine Schriftzüge durch Türgriffe zerschnitten. Nahtlose Ausrichtung."
+    clientResult: "Keine Schriftzüge durch Türgriffe zerschnitten. Nahtlose Ausrichtung.",
+    result: "0 zerschnittene Schriftzüge."
   },
   {
     id: "proj-3",
@@ -38,7 +41,8 @@ export const PROJECTS: Project[] = [
     image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
     tagline: "Leichtgewichtige Präsentation für einen Schreinermeister.",
     technicalDetails: "Handgeschriebener React-Code, optimierte WebP-Bilder, Kontaktformular.",
-    clientResult: "98 % Lighthouse-Score. Voll responsive auf allen Geräten."
+    clientResult: "98 % Lighthouse-Score. Voll responsive auf allen Geräten.",
+    result: "98 % Lighthouse-Score."
   },
   {
     id: "proj-4",
@@ -48,7 +52,8 @@ export const PROJECTS: Project[] = [
     image: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=800&q=80",
     tagline: "96-seitiges Kulturhandbuch – Korrekturlauf.",
     technicalDetails: "42 RGB-Bilder in CMYK konvertiert. Transparenzen reduziert.",
-    clientResult: "Kunde sparte über 1.200 € Makulaturkosten."
+    clientResult: "Kunde sparte über 1.200 € Makulaturkosten.",
+    result: "1.200 € Makulatur gespart."
   },
   {
     id: "proj-5",
@@ -58,7 +63,8 @@ export const PROJECTS: Project[] = [
     image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80",
     tagline: "Visuelle Auffrischung für Premium-Jahrgangsweine.",
     technicalDetails: "Spot-UV-Masken, TAC unter 280 % für schnelle Etikettenlinien.",
-    clientResult: "Tiefschwarzer Hintergrund ohne Farbeinbluten."
+    clientResult: "Tiefschwarzer Hintergrund ohne Farbeinbluten.",
+    result: "0 % Farbeinbluten."
   },
   {
     id: "proj-6",
@@ -68,6 +74,7 @@ export const PROJECTS: Project[] = [
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
     tagline: "Beschilderungsvorlagen für eloxierte Aluminiumtafeln.",
     technicalDetails: "UV-Druck auf gebürsteten Metallplatten. Ankerlöcher in Vektordatei.",
-    clientResult: "Legenden aus 25 Metern lesbar."
+    clientResult: "Legenden aus 25 Metern lesbar.",
+    result: "25 m Lesbarkeit."
   }
 ];

@@ -1,16 +1,25 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight, ChevronDown, BadgeCheck } from "lucide-react";
 import Link from "next/link";
 import { SERVICE_CATEGORIES } from "@/data/services";
 import { getCategoryIcon } from "@/components/ServiceIcons";
+import ZeroErrorBadge from "@/components/ZeroErrorBadge";
 
 function CategoryCard({ category }: { category: (typeof SERVICE_CATEGORIES)[number] }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border border-white/10 bg-white/5">
+    <motion.div
+      layout
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className={`border transition-colors duration-300 ${open ? "border-gold/40 bg-white/[0.07]" : "border-white/10 bg-white/5"}`}
+    >
       <button
         onClick={() => setOpen(!open)}
         className="w-full text-left p-5 md:p-6 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-colors"
@@ -34,49 +43,62 @@ function CategoryCard({ category }: { category: (typeof SERVICE_CATEGORIES)[numb
         />
       </button>
 
-      {open && (
-        <div className="px-5 md:px-6 pb-5 md:pb-6 border-t border-white/5 pt-5 md:pt-6 bg-ink/60 space-y-6">
-          <p className="text-sm text-slate-400 leading-relaxed max-w-2xl">{category.description}</p>
-          {category.subcategories.map((sub) => (
-            <div key={sub.id}>
-              <div className="mb-3">
-                <h3 className="text-sm font-display font-bold text-sky tracking-wide">{sub.title}</h3>
-                <p className="text-xs text-slate-500 mt-0.5">{sub.description}</p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                {sub.tiers.map((tier) => (
-                  <div
-                    key={tier.name}
-                    className="border border-white/10 bg-white/5 p-4 flex flex-col hover:border-gold/30 transition-colors"
-                  >
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-[10px] font-mono text-gold uppercase tracking-widest font-bold">
-                        {tier.name}
-                      </span>
-                      <span className="text-xs font-mono text-white font-bold">{tier.price}</span>
-                    </div>
-                    <ul className="space-y-1.5 flex-1">
-                      {tier.items.map((item, i) => (
-                        <li key={i} className="text-xs text-slate-400 flex items-start gap-2">
-                          <span className="text-gold mt-0.5 shrink-0">&bull;</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Link
-                      href="/kontakt"
-                      className="mt-4 text-[10px] font-mono text-gold uppercase tracking-widest font-bold hover:text-white transition-colors inline-flex items-center gap-1"
-                    >
-                      Angebot anfragen <ArrowRight size={12} />
-                    </Link>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            key="content"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden"
+          >
+            <div className="px-5 md:px-6 pb-5 md:pb-6 border-t border-white/5 pt-5 md:pt-6 bg-ink/60 space-y-6">
+              <p className="text-sm text-slate-400 leading-relaxed max-w-2xl">{category.description}</p>
+              {category.subcategories.map((sub) => (
+                <div key={sub.id}>
+                  <div className="mb-3">
+                    <h3 className="text-sm font-display font-bold text-sky tracking-wide">{sub.title}</h3>
+                    <p className="text-xs text-slate-500 mt-0.5">{sub.description}</p>
                   </div>
-                ))}
-              </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {sub.tiers.map((tier) => (
+                      <motion.div
+                        key={tier.name}
+                        whileHover={{ y: -3 }}
+                        transition={{ duration: 0.2 }}
+                        className="border border-white/10 bg-white/5 p-4 flex flex-col hover:border-gold/40 transition-colors"
+                      >
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="text-[10px] font-mono text-gold uppercase tracking-widest font-bold">
+                            {tier.name}
+                          </span>
+                          <span className="text-xs font-mono text-white font-bold">{tier.price}</span>
+                        </div>
+                        <ul className="space-y-1.5 flex-1">
+                          {tier.items.map((item, i) => (
+                            <li key={i} className="text-xs text-slate-400 flex items-start gap-2">
+                              <span className="text-gold mt-0.5 shrink-0">&bull;</span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <Link
+                          href="/kontakt"
+                          className="mt-4 text-[10px] font-mono text-gold uppercase tracking-widest font-bold hover:text-white transition-colors inline-flex items-center gap-1"
+                        >
+                          Angebot anfragen <ArrowRight size={12} />
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      )}
-    </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 }
 
@@ -111,9 +133,15 @@ export default function ServicesContent() {
             Leistungen, die Sie kaufen k&ouml;nnen &ndash; nicht nur Kategorien zum Anschauen.
           </h1>
           <p className="text-slate-400 text-sm md:text-base mt-3 max-w-xl">
-            Keine versteckten Kosten, keine undefineden Leistungen. W&auml;hlen Sie ein Paket, und ich liefere die
+            Keine versteckten Kosten, keine undefinierten Leistungen. W&auml;hlen Sie ein Paket, und ich liefere die
             fertigen Assets innerhalb der vereinbarten Zeit.
           </p>
+          <div className="flex flex-wrap items-center gap-3 mt-5">
+            <ZeroErrorBadge />
+            <p className="text-xs text-slate-300 font-mono">
+              Festpreis pro Paket &ndash; kein Stundenlohn, keine Nachforderungen
+            </p>
+          </div>
         </div>
 
         <div className="space-y-3">
@@ -124,7 +152,8 @@ export default function ServicesContent() {
 
         <div className="mt-8 p-6 bg-white/5 border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center space-x-2 text-xs text-slate-300">
-            <span>Kein passendes Paket dabei? Ich erstelle Ihnen ein individuelles Angebot.</span>
+            <BadgeCheck size={16} className="text-gold shrink-0" />
+            <span>Kein passendes Paket dabei? Jedes Paket hat einen Festpreis – ich erstelle Ihnen ein individuelles Angebot.</span>
           </div>
           <Link
             href="/kontakt"

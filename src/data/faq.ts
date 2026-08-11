@@ -31,5 +31,13 @@ export const FAQ_DATA: FAQItem[] = [
   {
     question: "Wie lange dauert die Aufbereitung einer Druckdatei?",
     answer: "Preflight-Check: 1–3 Werktage. Komplexe Projekte: 5–10 Werktage."
+  },
+  {
+    question: "Wie funktioniert die Preisgestaltung – Festpreis oder Stundenlohn?",
+    answer: "Jedes Paket hat einen Festpreis, keinen Stundenlohn. Sie wissen vor Projektstart genau, was es kostet und was Sie bekommen – keine Nachforderungen, keine Überraschungen."
+  },
+  {
+    question: "Was passiert, wenn Sie überlastet oder nicht verfügbar sind?",
+    answer: "Ich arbeite bewusst mit einer begrenzten Anzahl aktiver Projekte gleichzeitig. Bin ich ausgelastet, sage ich es Ihnen direkt und nenne einen realistischen Starttermin – ich schicke keine Arbeit an juniors oder Zwischenhändler weiter."
   }
 ];
