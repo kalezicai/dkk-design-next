@@ -30,7 +30,7 @@ export default function Footer() {
                 src="/logo-main.png"
                 alt="DKK design&marketing"
                 className="h-8 w-auto object-contain"
-                width={1536}
+                width={1596}
                 height={512}
               />
             </span>

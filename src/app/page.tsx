@@ -1,11 +1,9 @@
 import { ArrowRight, Star, Quote, Palette, FileCheck2, Globe, Megaphone, Printer, Package } from "lucide-react";
 import Link from "next/link";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import FileCheckTool from "@/components/FileCheckTool";
 import ZeroErrorBadge from "@/components/ZeroErrorBadge";
 import { Reveal, Stagger, StaggerItem, CountUp } from "@/components/motion";
-import { SLIDER_EXAMPLES } from "@/data/sliderExamples";
 
 const TESTIMONIALS = [
   { result: "1.200 € gespart.", quote: "Unsere 96-seitige Broschüre wurde von der Druckerei ohne eine einzige Rückfrage angenommen. Die Makulaturkosten, die wir uns erspart haben, sind das, was sonst der Vorstufe verloren ging.", author: "Geschäftsführer, Regionalverlag", project: "Druckvorstufe Kulturhandbuch" },
@@ -120,17 +118,29 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section className="bg-paper text-ink py-16 md:py-24 border-t border-b border-slate-200" aria-label="Vorher-Nachher-Vergleich">
+      {/* REGISTER SNAP — signature interaction */}
+      <section className="bg-ink text-white py-16 md:py-24 border-t border-b border-white/5" aria-label="Register-Snap-Interaktion">
         <div className="max-w-[1200px] w-full mx-auto px-4 md:px-6">
           <Reveal>
             <div className="max-w-[750px] mb-12">
-              <span className="text-xs uppercase tracking-widest text-gold-dim font-bold block mb-2 font-mono">[ DIE SIGNATUR-INTERAKTION ]</span>
-              <h2 className="text-3xl md:text-4xl font-display font-medium text-navy tracking-tight leading-tight">Ein falsches Farbprofil kostet Sie nicht nur Zeit &ndash; es kostet Sie den Druckauftrag.</h2>
-              <p className="text-slate-600 text-sm md:text-base mt-3">Die meisten Designagenturen senden Ihnen Mockups, die auf einem hellen iMac-Bildschirm gut aussehen, aber am Druckertresen versagen. Klicken Sie auf die Voreinstellungen unten und sehen Sie den Unterschied selbst.</p>
+              <span className="text-xs uppercase tracking-widest text-gold font-mono block mb-2">[ DIE SIGNATUR-INTERAKTION ]</span>
+              <h2 className="text-3xl md:text-4xl font-display font-medium text-white tracking-tight leading-tight">Vier Druckplatten. Ein Register. Beim ersten Mal.</h2>
+              <p className="text-slate-400 text-sm md:text-base mt-3">Farbauszüge, die nicht fluchten, kosten Sie den Druckauftrag &ndash; Makulatur inklusive. Diese Interaktion zeigt, was passiert, wenn CMYK-Register exakt sitzen: Farbe auf Farbe, beim ersten Andruck.</p>
             </div>
           </Reveal>
           <Reveal delay={1}>
-            <BeforeAfterSlider examples={SLIDER_EXAMPLES} />
+            <div className="relative border border-white/10 bg-navy">
+              <iframe
+                src="/register-snap.html"
+                title="Register Snap &ndash; CMYK-Register-Animation"
+                loading="lazy"
+                className="block w-full aspect-video"
+              />
+            </div>
+            <div className="mt-3 flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-slate-500">
+              <span>REGISTER 1:1 &middot; CMYK &middot; AUTOPLAY-LOOP</span>
+              <span className="hidden sm:inline">DKK INTERACTIVE #01</span>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -169,6 +179,33 @@ export default function HomePage() {
               ))}
             </Stagger>
           </div>
+        </div>
+      </section>
+
+      {/* CUT LINE — plotter trace */}
+      <section className="bg-ink text-white py-16 md:py-24 border-t border-white/5" aria-label="Schnittpfad-Animation">
+        <div className="max-w-[1200px] w-full mx-auto px-4 md:px-6">
+          <Reveal>
+            <div className="text-center mb-12">
+              <span className="text-xs uppercase tracking-widest text-gold font-mono block mb-2">[ SCHNITTPFAD &amp; FOLIENMONTAGE ]</span>
+              <h2 className="text-3xl md:text-4xl font-display font-medium text-white tracking-tight leading-tight">Jede Kontur wird zum Pfad &ndash; bevor sie die Maschine erreicht.</h2>
+              <p className="text-slate-400 text-sm mt-2 max-w-2xl mx-auto">Vom Fahrzeug-Konturschnitt bis zum Web-Wireframe: Schnittdaten als präzise Vektorpfade, mit Plotter-Korrekturwerten, die Folie und Maschine 1:1 verstehen.</p>
+            </div>
+          </Reveal>
+          <Reveal delay={1}>
+            <div className="relative border border-white/10 bg-navy">
+              <iframe
+                src="/cut-line.html"
+                title="Cut Line &ndash; Plotter-Schnittpfad-Animation"
+                loading="lazy"
+                className="block w-full aspect-video"
+              />
+            </div>
+            <div className="mt-3 flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-slate-500">
+              <span>PRESET 02 &middot; FAHRZEUGFOLIERUNG / PRESET 03 &middot; WEB</span>
+              <span className="hidden sm:inline">DKK INTERACTIVE #02</span>
+            </div>
+          </Reveal>
         </div>
       </section>
 

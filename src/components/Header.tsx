@@ -12,7 +12,6 @@ const NAV_LINKS = [
   { path: "/portfolio", label: "Portfolio" },
   { path: "/leistungen", label: "Leistungen" },
   { path: "/faq", label: "FAQ" },
-  { path: "/blog", label: "Blog" },
   { path: "/kontakt", label: "Kontakt" },
 ];
 
@@ -45,7 +44,7 @@ export default function Header() {
             src="/logo-main.png"
             alt="DKK design&marketing"
             className="h-8 md:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
-            width={1536}
+            width={1596}
             height={512}
           />
         </Link>
