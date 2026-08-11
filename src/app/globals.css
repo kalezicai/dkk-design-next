@@ -22,6 +22,17 @@
   --color-navy: #0E2A47;
   --color-sky: #5BB8E0;
   --color-white: #FFFFFF;
+
+  /* Precomputed rgba alpha variants — no color-mix/oklab, works on older browsers */
+  --color-surface-95: rgba(255, 255, 255, 0.95);
+  --color-surface-98: rgba(255, 255, 255, 0.98);
+  --color-surface-60: rgba(255, 255, 255, 0.60);
+  --color-ink-90: rgba(11, 14, 20, 0.90);
+  --color-ink-80: rgba(11, 14, 20, 0.80);
+  --color-gold-40: rgba(201, 162, 76, 0.40);
+  --color-gold-dim-20: rgba(138, 117, 56, 0.20);
+  --color-navy-20: rgba(14, 42, 71, 0.20);
+  --color-sky-80: rgba(91, 184, 224, 0.80);
 }
 
 /* DARK MODE (current look, applied via .dark on <html>) */
@@ -37,6 +48,17 @@
   --color-heading: #A9C9E6;
   --color-gold-dim: #C9B27A;
   --color-on-gold: #0B0E14;
+
+  /* Precomputed rgba alpha variants — no color-mix/oklab, works on older browsers */
+  --color-surface-95: rgba(21, 26, 36, 0.95);
+  --color-surface-98: rgba(21, 26, 36, 0.98);
+  --color-surface-60: rgba(21, 26, 36, 0.60);
+  --color-ink-90: rgba(242, 244, 247, 0.90);
+  --color-ink-80: rgba(242, 244, 247, 0.80);
+  --color-gold-40: rgba(201, 162, 76, 0.40);
+  --color-gold-dim-20: rgba(201, 178, 122, 0.20);
+  --color-navy-20: rgba(14, 42, 71, 0.20);
+  --color-sky-80: rgba(91, 184, 224, 0.80);
 }
 
 :root {

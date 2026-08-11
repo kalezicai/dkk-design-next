@@ -12,7 +12,7 @@ export default function DatenschutzPage() {
     <div className="min-h-screen bg-paper text-ink">
       <div className="max-w-[800px] w-full mx-auto px-4 md:px-6 pt-32 pb-16 md:pt-40 md:pb-24">
         <h1 className="text-3xl md:text-4xl font-display font-bold text-heading tracking-tight leading-tight mb-8">Datenschutzerklärung</h1>
-        <div className="prose prose-sm text-ink/80 space-y-4">
+        <div className="prose prose-sm text-(--color-ink-80) space-y-4">
           <p><strong>Stand: Juli 2026</strong></p>
           <h2 className="text-xl font-display font-bold text-heading mt-6">1. Verantwortlicher</h2>
           <p>DKK design&marketing<br />E-Mail: info.dkk@gmail.com</p>

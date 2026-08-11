@@ -18,7 +18,7 @@ function CategoryCard({ category }: { category: (typeof SERVICE_CATEGORIES)[numb
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className={`border transition-colors duration-300 ${open ? "border-gold/40 bg-surface-2" : "border-line bg-surface"}`}
+      className={`border transition-colors duration-300 ${open ? "border-(--color-gold-40) bg-surface-2" : "border-line bg-surface"}`}
     >
       <button
         onClick={() => setOpen(!open)}
@@ -53,7 +53,7 @@ function CategoryCard({ category }: { category: (typeof SERVICE_CATEGORIES)[numb
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <div className="px-5 md:px-6 pb-5 md:pb-6 border-t border-line pt-5 md:pt-6 bg-surface/60 space-y-6">
+            <div className="px-5 md:px-6 pb-5 md:pb-6 border-t border-line pt-5 md:pt-6 bg-(--color-surface-60) space-y-6">
               <p className="text-sm text-muted leading-relaxed max-w-2xl">{category.description}</p>
               {category.subcategories.map((sub) => (
                 <div key={sub.id}>

@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-[#0B0E14] text-white flex items-center justify-center">
       <div className="text-center max-w-md px-4">
-        <div className="inline-flex items-center justify-center w-20 h-20 border border-white/10 bg-white/5 mb-6">
+        <div className="inline-flex items-center justify-center w-20 h-20 border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.05)] mb-6">
           <span className="text-gold text-4xl">!</span>
         </div>
         <h1 className="text-7xl font-display font-bold text-gold mb-4">404</h1>

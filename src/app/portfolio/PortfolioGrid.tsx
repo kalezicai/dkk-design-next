@@ -33,8 +33,8 @@ function ProjectCard({ project }: { project: Project }) {
           className="w-full h-full object-cover grayscale brightness-95 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
           loading="lazy"
         />
-        <div className="absolute top-2 left-2 bg-[#0B0E14]/90 text-white font-mono text-[9px] px-2 py-0.5 tracking-wider uppercase border border-white/10">{project.categoryLabel}</div>
-        <div className="absolute bottom-2 right-2 bg-[#0B0E14]/90 text-gold font-mono text-[9px] px-2 py-0.5 border border-gold-dim">DRUCKFERTIG KONFIGURIERT</div>
+        <div className="absolute top-2 left-2 bg-[rgba(11,14,20,0.9)] text-white font-mono text-[9px] px-2 py-0.5 tracking-wider uppercase border border-[rgba(255,255,255,0.1)]">{project.categoryLabel}</div>
+        <div className="absolute bottom-2 right-2 bg-[rgba(11,14,20,0.9)] text-gold font-mono text-[9px] px-2 py-0.5 border border-gold-dim">DRUCKFERTIG KONFIGURIERT</div>
       </div>
       <div className="p-5 flex flex-col flex-1">
         <h3 className="text-lg font-display font-bold text-heading group-hover:text-gold-dim transition-colors">{project.title}</h3>
@@ -42,7 +42,7 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="mt-auto pt-4">
           <div className="bg-surface-2 border border-line p-3">
             <span className="text-[10px] font-mono text-muted uppercase font-bold tracking-wider">SPECS: </span>
-            <span className="text-[10px] font-mono text-ink/80 leading-tight">{project.technicalDetails}</span>
+            <span className="text-[10px] font-mono text-(--color-ink-80) leading-tight">{project.technicalDetails}</span>
           </div>
         </div>
       </div>

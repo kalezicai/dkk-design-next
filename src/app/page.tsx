@@ -73,7 +73,7 @@ export default function HomePage() {
               </div>
             </StaggerItem>
             <StaggerItem>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-14 md:mb-16 text-xs text-muted font-mono">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8 md:mb-16 text-xs text-muted font-mono">
                 <span className="flex items-center gap-1.5">
                   <span className="flex text-gold">{Array.from({ length: 5 }).map((_, i) => <Star key={i} size={12} className="fill-gold" />)}</span>
                   <span className="font-bold text-ink">4,9/5</span>
@@ -85,34 +85,28 @@ export default function HomePage() {
             </StaggerItem>
           </Stagger>
 
-          <div className="border-t border-b border-line py-8 md:py-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 bg-surface/60 backdrop-blur-xs">
-            <div className="flex flex-col justify-between">
-              <div>
-                <span className="text-4xl md:text-5xl font-display font-bold text-gold tracking-tight block">
-                  <CountUp value={1500} suffix="+" />
-                </span>
-                <span className="text-xs uppercase tracking-widest text-muted font-mono mt-1 block">Abgeschlossene Projekte</span>
-              </div>
-              <p className="text-xs text-muted mt-2 max-w-xs">Von Luxusfolien-Auflagen bis zu flottenfertigen Folienfahrzeugen.</p>
+          <div className="border-t border-b border-line py-6 md:py-10 grid grid-cols-3 gap-4 bg-(--color-surface-60) backdrop-blur-xs">
+            <div className="flex flex-col">
+              <span className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gold tracking-tight block">
+                <CountUp value={1500} suffix="+" />
+              </span>
+              <span className="text-[10px] sm:text-xs uppercase tracking-widest text-muted font-mono mt-1 block">Abgeschlossene Projekte</span>
+              <p className="hidden md:block text-xs text-muted mt-2 max-w-xs">Von Luxusfolien-Auflagen bis zu flottenfertigen Folienfahrzeugen.</p>
             </div>
-            <div className="flex flex-col justify-between border-t md:border-t-0 md:border-l border-line pt-6 md:pt-0 md:pl-8">
-              <div>
-                <span className="text-4xl md:text-5xl font-display font-bold text-gold tracking-tight block">
-                  <CountUp value={500} suffix="+" />
-                </span>
-                <span className="text-xs uppercase tracking-widest text-muted font-mono mt-1 block">Aktive Direktkunden</span>
-              </div>
-              <p className="text-xs text-muted mt-2 max-w-xs">Einzelhandel, Bauunternehmen, Weingüter, Transportflotten.</p>
+            <div className="flex flex-col border-l border-line pl-4 md:pl-8">
+              <span className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gold tracking-tight block">
+                <CountUp value={500} suffix="+" />
+              </span>
+              <span className="text-[10px] sm:text-xs uppercase tracking-widest text-muted font-mono mt-1 block">Aktive Direktkunden</span>
+              <p className="hidden md:block text-xs text-muted mt-2 max-w-xs">Einzelhandel, Bauunternehmen, Weingüter, Transportflotten.</p>
             </div>
-            <div className="flex flex-col justify-between border-t md:border-t-0 md:border-l border-line pt-6 md:pt-0 md:pl-8">
-              <div>
-                <div className="flex items-center space-x-1">
-                  <span className="text-4xl md:text-5xl font-display font-bold text-gold tracking-tight">0</span>
-                  <ZeroErrorBadge />
-                </div>
-                <span className="text-xs uppercase tracking-widest text-muted font-mono mt-1 block">Druckereirückweisungen in 12 Jahren</span>
+            <div className="flex flex-col border-l border-line pl-4 md:pl-8">
+              <div className="flex items-center space-x-1">
+                <span className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gold tracking-tight">0</span>
+                <ZeroErrorBadge className="hidden md:inline-flex" />
               </div>
-              <p className="text-xs text-muted mt-2 max-w-xs">Lehnt Ihre Druckerei mein Layout ab, schreibe ich es innerhalb von 12 Stunden kostenfrei neu.</p>
+              <span className="text-[10px] sm:text-xs uppercase tracking-widest text-muted font-mono mt-1 block">Druckereirückweisungen in 12 Jahren</span>
+              <p className="hidden md:block text-xs text-muted mt-2 max-w-xs">Lehnt Ihre Druckerei mein Layout ab, schreibe ich es innerhalb von 12 Stunden kostenfrei neu.</p>
             </div>
           </div>
         </div>
@@ -154,7 +148,7 @@ export default function HomePage() {
                 <p className="text-muted text-sm mt-3 max-w-md">
                   Branding, Druckvorstufe, Webentwicklung, Marketing, Printprodukte und Zusatzleistungen &ndash; alle als Starter-, Professional- oder Premium-Paket buchbar.
                 </p>
-                <p className="text-ink/90 text-sm mt-3 max-w-md font-medium">Jedes Paket hat einen Festpreis, keinen Stundenlohn &ndash; Sie wissen vor Projektstart genau, was es kostet und was Sie bekommen.</p>
+                <p className="text-(--color-ink-90) text-sm mt-3 max-w-md font-medium">Jedes Paket hat einen Festpreis, keinen Stundenlohn &ndash; Sie wissen vor Projektstart genau, was es kostet und was Sie bekommen.</p>
                 <Link
                   href="/leistungen"
                   className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-gold text-on-gold font-bold text-xs uppercase tracking-widest hover:bg-white transition-all duration-200 group"
@@ -167,7 +161,7 @@ export default function HomePage() {
             <Stagger className="grid grid-cols-2 sm:grid-cols-3 gap-3" staggerMs={70}>
               {SERVICE_TILES.map((item) => (
                 <StaggerItem key={item.label}>
-                  <div className="border border-line bg-surface p-4 text-center hover:border-gold/40 hover:bg-surface-2 transition-all duration-300 group">
+                  <div className="border border-line bg-surface p-4 text-center hover:border-(--color-gold-40) hover:bg-surface-2 transition-all duration-300 group">
                     <item.icon size={20} className="mx-auto mb-2 text-gold transition-transform duration-300 group-hover:scale-110" />
                     <span className="text-xs font-mono text-gold font-bold">{item.label}</span>
                   </div>
@@ -209,7 +203,7 @@ export default function HomePage() {
               <span className="text-xs uppercase tracking-widest text-gold font-mono block mb-2">[ KOSTENLOSER PREFLIGHT-CHECK ]</span>
               <h2 className="text-3xl md:text-4xl font-display font-medium text-ink tracking-tight leading-tight">Prüfen Sie Ihre Druckdaten in 30 Sekunden</h2>
               <p className="text-muted text-sm mt-2 max-w-xl mx-auto">Beantworten Sie 5 Fragen &ndash; ich sage Ihnen, ob Ihre Datei drucktauglich ist.</p>
-              <p className="text-ink/80 text-sm mt-1 font-medium">Kostenlos, unverbindlich, in 30 Sekunden &ndash; keine Registrierung nötig.</p>
+              <p className="text-(--color-ink-80) text-sm mt-1 font-medium">Kostenlos, unverbindlich, in 30 Sekunden &ndash; keine Registrierung nötig.</p>
             </div>
           </Reveal>
           <div className="max-w-[700px] mx-auto">
@@ -225,8 +219,8 @@ export default function HomePage() {
               <div className="border border-line p-2 bg-surface">
                 <div className="relative aspect-3/4 bg-slate-900 overflow-hidden">
                   <img src="/images/about-portrait.jpg" alt="Portrait DKK design&marketing" className="w-full h-full object-cover grayscale brightness-95 contrast-105" loading="lazy" />
-                  <div className="absolute inset-0 bg-navy/20 mix-blend-color pointer-events-none" />
-                  <div className="absolute top-3 left-3 bg-[#0B0E14]/90 text-white/80 font-mono text-[9px] px-2 py-0.5 tracking-widest border border-white/10">DKK GERMANY STUDIO // 1:1</div>
+                  <div className="absolute inset-0 bg-(--color-navy-20) mix-blend-color pointer-events-none" />
+                  <div className="absolute top-3 left-3 bg-[rgba(11,14,20,0.9)] text-[rgba(255,255,255,0.8)] font-mono text-[9px] px-2 py-0.5 tracking-widest border border-[rgba(255,255,255,0.1)]">DKK GERMANY STUDIO // 1:1</div>
                   <div className="absolute bottom-3 right-3 bg-gold text-on-gold font-mono text-[9px] px-2 py-0.5 font-bold tracking-widest">SOLO-FREELANCER</div>
                 </div>
               </div>
@@ -262,10 +256,10 @@ export default function HomePage() {
             {TESTIMONIALS.map((t, i) => (
               <StaggerItem key={i}>
                 <div className="bg-surface border border-line p-6 flex flex-col relative hover:border-gold-dim/30 hover:-translate-y-1 transition-all duration-300">
-                  <Quote size={24} className="text-gold-dim/20 absolute top-4 right-4" />
+                  <Quote size={24} className="text-(--color-gold-dim-20) absolute top-4 right-4" />
                   <p className="text-2xl md:text-3xl font-display font-bold text-gold mb-4">{t.result}</p>
                   <div className="flex space-x-1 mb-4">{Array.from({ length: 5 }).map((_, s) => <Star key={s} size={14} className="text-gold fill-gold" />)}</div>
-                  <blockquote className="text-sm text-ink/80 leading-relaxed mb-6 flex-1 italic">&bdquo;{t.quote}&rdquo;</blockquote>
+                  <blockquote className="text-sm text-(--color-ink-80) leading-relaxed mb-6 flex-1 italic">&bdquo;{t.quote}&rdquo;</blockquote>
                   <div className="border-t border-line pt-4 mt-auto"><p className="text-xs font-bold text-heading">{t.author}</p><p className="text-[10px] font-mono text-muted">{t.project}</p></div>
                 </div>
               </StaggerItem>

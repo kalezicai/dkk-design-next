@@ -48,13 +48,13 @@ export default function BeforeAfterSlider({ examples }: { examples: SliderExampl
             className="relative h-[340px] md:h-[420px] bg-surface-2 rounded-none border border-line select-none overflow-hidden cursor-ew-resize no-select"
           >
             <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
-            <div className="absolute inset-4 border border-dashed border-white/10 pointer-events-none flex items-start justify-between p-2">
-              <span className="text-[9px] font-mono text-white/30 tracking-widest">AUSGABEGRENZE: BESCHNITT 3MM</span>
-              <span className="text-[9px] font-mono text-white/30">CMYK-ZIEL OK</span>
+            <div className="absolute inset-4 border border-dashed border-[rgba(255,255,255,0.1)] pointer-events-none flex items-start justify-between p-2">
+              <span className="text-[9px] font-mono text-[rgba(255,255,255,0.3)] tracking-widest">AUSGABEGRENZE: BESCHNITT 3MM</span>
+              <span className="text-[9px] font-mono text-[rgba(255,255,255,0.3)]">CMYK-ZIEL OK</span>
             </div>
             <div className="absolute inset-0 flex items-center justify-center p-8 bg-[#0E2A47]">
               <div className="text-center max-w-sm">
-                <div className="inline-block p-4 bg-white/5 border border-gold rounded-xs mb-3">
+                <div className="inline-block p-4 bg-[rgba(255,255,255,0.05)] border border-gold rounded-xs mb-3">
                   <div className="w-20 h-20 mx-auto border-2 border-dashed border-gold flex items-center justify-center rounded-full relative">
                     <span className="text-gold font-display font-black text-2xl">DKK</span>
                     <div className="absolute -top-1 -left-1 w-2 h-2 bg-sky" />
@@ -88,8 +88,8 @@ export default function BeforeAfterSlider({ examples }: { examples: SliderExampl
                 <span className="w-1 h-3 bg-[#0B0E14]/50" /><span className="w-1 h-3 bg-[#0B0E14]/50" />
               </div>
             </div>
-            <div className="absolute left-6 bottom-6 pointer-events-none bg-red-900/80 text-white px-2.5 py-1 text-[10px] uppercase font-mono tracking-widest border border-red-500">Vorher: Roh / Problematisch</div>
-            <div className="absolute right-6 bottom-6 pointer-events-none bg-sky/80 text-ink px-2.5 py-1 text-[10px] uppercase font-mono tracking-widest border border-white">Ergebnis: DKK Output</div>
+            <div className="absolute left-6 bottom-6 pointer-events-none bg-[rgba(127,29,29,0.8)] text-white px-2.5 py-1 text-[10px] uppercase font-mono tracking-widest border border-red-500">Vorher: Roh / Problematisch</div>
+            <div className="absolute right-6 bottom-6 pointer-events-none bg-(--color-sky-80) text-ink px-2.5 py-1 text-[10px] uppercase font-mono tracking-widest border border-white">Ergebnis: DKK Output</div>
           </div>
           <div className="mt-2 text-xs text-muted text-center flex items-center justify-center space-x-2">
             <Sliders size={12} className="text-gold-dim" /><span>Ziehen Sie den Griff nach links oder rechts, um die technischen Assets zu vergleichen.</span>
@@ -113,7 +113,7 @@ export default function BeforeAfterSlider({ examples }: { examples: SliderExampl
             </div>
             <div>
               <h4 className="text-[11px] font-mono text-emerald-600 font-bold uppercase tracking-wider mb-2 flex items-center space-x-1"><Check size={12} className="text-emerald-500" /><span>Meine Lieferung</span></h4>
-              <ul className="space-y-1.5 text-xs text-ink/80 font-medium">
+              <ul className="space-y-1.5 text-xs text-(--color-ink-80) font-medium">
                 {current.afterDetails.map((det, i) => (
                   <li key={i} className="flex items-start space-x-2"><span className="text-gold font-bold">&bull;</span><span>{det}</span></li>
                 ))}

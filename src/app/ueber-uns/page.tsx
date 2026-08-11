@@ -65,7 +65,7 @@ export default function AboutPage() {
           <Reveal className="lg:col-span-5">
             <span className="text-xs uppercase tracking-widest text-gold-dim font-bold block mb-2 font-mono">[ ÜBER MICH ]</span>
             <h1 className="text-3xl md:text-4xl font-display font-medium text-heading tracking-tight leading-tight mb-6">Solo-Designer mit Druckereiwurzeln.</h1>
-            <div className="space-y-4 text-sm text-ink/80 leading-relaxed">
+              <div className="space-y-4 text-sm text-(--color-ink-80) leading-relaxed">
               <p>Ich bin ein unabhängiger Grafikdesigner und Druckvorstufen-Techniker mit über 12 Jahren Erfahrung. Meine Wurzeln liegen in Ulcinj (Montenegro), meine Basis in Deutschland.</p>
               <p>Anders als eine Agentur arbeite ich direkt – von der ersten Skizze bis zur produktionsreifen Datei. Jedes Projekt durchläuft meine persönliche Qualitätskontrolle.</p>
               <p>Mein Fokus liegt auf druck- und produktionsgerechtem Design. Ob Offsetdruck, Fahrzeugfolierung oder Webentwicklung – ich liefere Dateien, die in der realen Produktion bestehen.</p>
@@ -74,7 +74,7 @@ export default function AboutPage() {
           <Reveal delay={1} className="lg:col-span-7">
             <div className="bg-surface border border-line p-6 md:p-8 space-y-6">
               <h2 className="text-lg font-display font-bold text-heading border-b border-line pb-3">Meine Arbeitsweise</h2>
-              <div className="space-y-4 text-sm text-ink/80 leading-relaxed">
+            <div className="space-y-4 text-sm text-(--color-ink-80) leading-relaxed">
                 <p>Jedes Projekt beginnt mit einer gründlichen Analyse Ihrer Anforderungen. Ich prüfe Ihre Dateien auf Drucktauglichkeit, Farbraum, Auflösung und Beschnitt.</p>
                 <p>Nach der Analyse folgt die Gestaltung. Jede Datei wird in der produktionsgerechten Version ausgeliefert – ob für den Offsetdruck, die Folienplotteranlage oder das Web.</p>
                 <p>Mein Versprechen: Sie erhalten keine &bdquo;Entwürfe&ldquo;, sondern druckfertige, produktionssichere Ergebnisse.</p>

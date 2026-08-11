@@ -38,7 +38,7 @@ export default function FAQPage() {
         <Stagger className="space-y-3" staggerMs={60}>
           {FAQ_DATA.map((faq, index) => (
             <StaggerItem key={index}>
-              <details className="bg-surface border border-line transition-all duration-200 hover:border-gold/40 group open:border-gold/40">
+              <details className="bg-surface border border-line transition-all duration-200 hover:border-(--color-gold-40) group open:border-(--color-gold-40)">
                 <summary className="w-full text-left p-5 flex items-center justify-between font-display font-bold text-heading text-sm md:text-base cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                   <span className="pr-4">{faq.question}</span>
                   <Plus size={16} className="text-gold shrink-0 transition-transform duration-300 group-open:rotate-45" />

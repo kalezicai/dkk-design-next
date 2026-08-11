@@ -21,7 +21,7 @@ const NAV_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0B0E14] text-white pt-16 pb-12 border-t border-white/10 mt-auto">
+    <footer className="bg-[#0B0E14] text-white pt-16 pb-12 border-t border-[rgba(255,255,255,0.1)] mt-auto">
       <div className="max-w-[1200px] w-full mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
           <div className="md:col-span-4 space-y-4">
@@ -68,7 +68,7 @@ export default function Footer() {
           <div className="flex-1 bg-sky" /><div className="flex-1 bg-fuchsia-600" /><div className="flex-1 bg-amber-400" /><div className="flex-1 bg-slate-900" />
         </div>
 
-        <div className="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between text-[10px] font-mono text-slate-500 gap-4">
+        <div className="border-t border-[rgba(255,255,255,0.05)] pt-6 flex flex-col sm:flex-row items-center justify-between text-[10px] font-mono text-slate-500 gap-4">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <span>&copy; {new Date().getFullYear()} DKK design&marketing. Alle Rechte vorbehalten.</span>
             <span className="hidden sm:inline text-slate-700">|</span>

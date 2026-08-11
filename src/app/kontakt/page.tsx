@@ -41,7 +41,7 @@ export default function ContactPage() {
                 <ShieldCheck size={14} />
                 <span className="text-xs font-mono uppercase tracking-widest font-bold">NULL-FEHLER-VERSPRECHEN</span>
               </div>
-              <p className="text-xs text-ink/80 mt-2">Lehnt Ihre Druckerei meine Datei ab, schreibe ich sie innerhalb von <strong>12 Stunden</strong> kostenfrei neu. In 12 Jahren ist das nie passiert.</p>
+              <p className="text-xs text-(--color-ink-80) mt-2">Lehnt Ihre Druckerei meine Datei ab, schreibe ich sie innerhalb von <strong>12 Stunden</strong> kostenfrei neu. In 12 Jahren ist das nie passiert.</p>
             </div>
 
             <div className="space-y-4 pt-2">
@@ -56,7 +56,7 @@ export default function ContactPage() {
                 <div className="text-heading shrink-0"><MapPin size={16} /></div>
                 <div>
                   <span className="text-[10px] font-mono text-muted uppercase block">STANDORT</span>
-                  <span className="text-sm font-medium text-ink/80">Sitz in Deutschland</span>
+                  <span className="text-sm font-medium text-(--color-ink-80)">Sitz in Deutschland</span>
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function ContactPage() {
               <a href="mailto:info.dkk@gmail.com" className="text-sky underline font-semibold">info.dkk@gmail.com</a>
               {" "}mit einer Beschreibung Ihres Projekts. Fügen Sie gern Referenzdateien oder Fahrzeugfotos bei.
             </p>
-            <ol className="mt-6 space-y-3 text-sm text-ink/80">
+            <ol className="mt-6 space-y-3 text-sm text-(--color-ink-80)">
               {[
                 "Sie beschreiben Ihr Projekt und hängen Rohdaten an.",
                 "Ich prüfe die Dateien kostenlos auf Drucktauglichkeit.",

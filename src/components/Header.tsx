@@ -51,10 +51,10 @@ export default function Header() {
     <header
       className={cn(
         "fixed top-0 left-0 w-full z-50 h-16 flex items-center transition-colors duration-300",
-        showBg ? "bg-surface/95 border-b border-line backdrop-blur-md shadow-lg" : "bg-transparent"
+        showBg ? "bg-(--color-surface-95) border-b border-line backdrop-blur-md shadow-lg" : "bg-transparent"
       )}
     >
-      <div className="max-w-[1200px] w-full mx-auto px-4 md:px-6 flex items-center justify-between">
+      <div className="max-w-[1200px] w-full mx-auto px-4 md:px-6 flex items-center justify-between relative z-50">
         <Link href="/" className="flex items-center group focus:outline-none" aria-label="DKK design&marketing — Zur Startseite">
           <img
             src="/logo-v3.png"
@@ -125,7 +125,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-40 bg-surface/98 pt-20 px-6 flex flex-col space-y-6 md:hidden"
+            className="fixed inset-0 z-40 bg-(--color-surface-98) pt-20 px-6 flex flex-col space-y-6 md:hidden"
             role="dialog"
             aria-modal="true"
           >

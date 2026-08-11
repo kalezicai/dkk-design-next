@@ -64,7 +64,7 @@ export default async function BlogPostPage({ params }: Props) {
         <h1 className="text-3xl md:text-4xl font-display font-bold text-heading tracking-tight leading-tight mb-4">{post.title}</h1>
         <p className="text-sm md:text-base text-muted leading-relaxed mb-8 border-l-2 border-gold pl-4 italic">{post.excerpt}</p>
 
-        <div className="prose prose-sm md:prose-base max-w-none text-ink/80 leading-relaxed space-y-4">
+        <div className="prose prose-sm md:prose-base max-w-none text-(--color-ink-80) leading-relaxed space-y-4">
           {paragraphs.map((paragraph, idx) => {
             if (paragraph.startsWith("## ")) {
               return <h2 key={idx} className="text-xl font-display font-bold text-heading mt-8 mb-3">{paragraph.replace("## ", "")}</h2>;
